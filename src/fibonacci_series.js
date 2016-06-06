@@ -1,32 +1,37 @@
 'use strict';
 
-function fibonacci_series(n) {
-	var arr=new Array();
-	for(var i=0;i<n+1;i++)
-	{
-		if(i==0)
+function fibonacci_series(n) 
+{
+	var arr=[0];
+	var arrs=[0,1];
+	var arrss=[0,1,1];
+	
+	
+		if(n==0)
 		{
-			arr[i]=0;
-			arr.push(arr[i]);
+			return arr;
 			}
-		else if(i==1)
+		else if(n==1)
 		{
-			arr[i]=1;
-			arr.push(arr[i]);
+			return arrs;
 			}
-		else if(i==2)
+		else if(n==2)
 		{
-			arr[i]=1;
-			arr.push(arr[i]);
+		return arrss;
 			}
 		else
 		{
-			arr[i]=2*arr[i-1]-arr[i-3];
-			arr.push(arr[i]);
+		for(var i=3;i<n+1;i++)
+		{
+			
+			arrss[i]=2*arrss[i-1]-arrss[i-3];
+			arrss.push(arrss[i]);
+		}
+		return arrss;
 			}
 		
-		}
-     return arr;
+		
+     
 }
 
 module.exports = fibonacci_series;
